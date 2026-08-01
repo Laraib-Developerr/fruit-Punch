@@ -1,0 +1,1172 @@
+/* STREAMING_CHUNK:Defining CSS custom properties and baseline variables... */
+:root {
+--bg-cream: #FFF8DC;
+--primary-yellow: #FFD700;
+--secondary-orange: #FFA500;
+--accent-pink: #FF1493;
+--text-brown: #8B4513;
+--text-dark: #3E1A00;
+--white: #FFFFFF;
+--black: #111111;
+--radius-sm: 8px;
+--radius-md: 14px;
+--radius-lg: 22px;
+--shadow-hard: 0 6px 0px var(--text-brown);
+--shadow-hover: 0 9px 0px var(--text-brown);
+--shadow-soft: 0 10px 25px rgba(139, 69, 19, 0.12);
+--transition-fast: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+background-color: var(--bg-cream);
+color: var(--text-brown);
+font-family: 'Poppins', sans-serif;
+line-height: 1.6;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Fredoka', cursive, sans-serif;
+color: var(--text-brown);
+line-height: 1.2;
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+/* STREAMING_CHUNK:Styling header navigation and responsive logo... */
+header {
+background-color: var(--primary-yellow);
+border-bottom: 4px solid var(--text-brown);
+position: sticky;
+top: 0;
+z-index: 1000;
+padding: 10px 20px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.header-container {
+max-width: 1200px;
+margin: 0 auto;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.logo-group {
+display: flex;
+align-items: center;
+gap: 12px;
+cursor: pointer;
+}
+
+.logo-svg {
+width: 52px;
+height: 52px;
+filter: drop-shadow(0px 2px 0px var(--text-brown));
+}
+
+.brand-title {
+font-size: 1.8rem;
+font-weight: 700;
+color: var(--text-brown);
+text-transform: uppercase;
+letter-spacing: 0.5px;
+text-shadow: 2px 2px 0px #FFE066;
+}
+
+.brand-subtitle {
+font-size: 0.75rem;
+font-weight: 700;
+color: var(--accent-pink);
+letter-spacing: 1.5px;
+text-transform: uppercase;
+margin-top: -4px;
+}
+
+.hours-text {
+display: none;
+}
+
+@media (min-width: 600px) {
+.hours-text {
+display: inline;
+}
+}
+
+nav ul {
+display: flex;
+list-style: none;
+gap: 24px;
+align-items: center;
+}
+
+.nav-link {
+font-family: 'Fredoka', cursive, sans-serif;
+font-size: 1.1rem;
+font-weight: 600;
+padding: 8px 16px;
+border-radius: var(--radius-sm);
+transition: var(--transition-fast);
+cursor: pointer;
+}
+
+.nav-link:hover, .nav-link.active {
+background-color: var(--secondary-orange);
+color: var(--white);
+transform: translateY(-2px);
+box-shadow: 0 3px 0px var(--text-brown);
+}
+
+.header-actions {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.btn-quick-location {
+background-color: var(--accent-pink);
+color: var(--white);
+padding: 8px 16px;
+border-radius: 50px;
+font-weight: 700;
+font-size: 0.95rem;
+border: 2px solid var(--text-brown);
+box-shadow: 0 3px 0px var(--text-brown);
+cursor: pointer;
+transition: var(--transition-fast);
+display: flex;
+align-items: center;
+gap: 6px;
+}
+
+.btn-quick-location:hover {
+transform: scale(1.05);
+background-color: #e0007b;
+}
+
+.burger-btn {
+display: none;
+background: none;
+border: none;
+font-size: 1.8rem;
+color: var(--text-brown);
+cursor: pointer;
+padding: 4px;
+}
+
+main {
+flex: 1;
+}
+
+.container {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+.container-top-padding {
+padding-top: 40px;
+}
+
+.page-view {
+display: none;
+animation: fadeIn 0.35s ease-in-out;
+}
+
+.page-view.active {
+display: block;
+}
+
+.page-view-padded {
+padding-top: 30px;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(8px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* STREAMING_CHUNK:Styling hero section, decorative icons and badge... */
+.section-header {
+text-align: center;
+margin-bottom: 36px;
+}
+
+.section-title {
+font-size: 2.4rem;
+color: var(--text-brown);
+margin-bottom: 8px;
+position: relative;
+display: inline-block;
+}
+
+.section-subtitle {
+font-size: 1.05rem;
+color: var(--text-brown);
+opacity: 0.9;
+max-width: 600px;
+margin: 0 auto;
+}
+
+.btn-primary {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+background-color: var(--secondary-orange);
+color: var(--white);
+font-family: 'Fredoka', cursive, sans-serif;
+font-size: 1.15rem;
+font-weight: 600;
+padding: 14px 28px;
+border-radius: var(--radius-md);
+border: 3px solid var(--text-brown);
+box-shadow: var(--shadow-hard);
+cursor: pointer;
+transition: var(--transition-fast);
+}
+
+.btn-primary:hover {
+transform: translateY(-3px);
+box-shadow: var(--shadow-hover);
+background-color: #ff9100;
+}
+
+.hero-section {
+background: linear-gradient(135deg, #FFF3B0 0%, #FFE066 100%);
+border-bottom: 4px solid var(--text-brown);
+padding: 60px 20px;
+text-align: center;
+position: relative;
+overflow: hidden;
+background-image: radial-gradient(rgba(255, 165, 0, 0.25) 20%, transparent 20%);
+background-size: 24px 24px;
+}
+
+.hero-decor {
+position: absolute;
+font-size: 2.8rem;
+opacity: 0.85;
+user-select: none;
+animation: floatSlow 3s ease-in-out infinite alternate;
+}
+
+.hero-decor-1 { top: 15%; left: 8%; transform: rotate(-15deg); }
+.hero-decor-2 { top: 20%; right: 8%; transform: rotate(15deg); animation-delay: 1s; }
+.hero-decor-3 { bottom: 15%; left: 12%; transform: rotate(10deg); animation-delay: 1.5s; }
+.hero-decor-4 { bottom: 15%; right: 12%; transform: rotate(-20deg); animation-delay: 0.5s; }
+
+@keyframes floatSlow {
+from { transform: translateY(0px) rotate(-5deg); }
+to { transform: translateY(-10px) rotate(5deg); }
+}
+
+.hero-badge {
+display: inline-block;
+background-color: var(--accent-pink);
+color: var(--white);
+font-weight: 700;
+font-size: 0.9rem;
+padding: 8px 20px;
+border-radius: 50px;
+border: 2px solid var(--text-brown);
+box-shadow: 0 4px 0px var(--text-brown);
+margin-bottom: 18px;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.hero-title {
+font-size: 3.8rem;
+color: var(--text-brown);
+margin-bottom: 14px;
+text-shadow: 3px 3px 0px var(--white), 6px 6px 0px var(--secondary-orange);
+letter-spacing: 1px;
+}
+
+.hero-tagline {
+font-size: 1.3rem;
+font-weight: 600;
+color: var(--text-dark);
+max-width: 700px;
+margin: 0 auto 30px auto;
+line-height: 1.5;
+}
+
+/* STREAMING_CHUNK:Styling search bar, combo deals grid and category cards... */
+.search-wrapper {
+max-width: 520px;
+margin: 0 auto 40px auto;
+position: relative;
+}
+
+.search-input {
+width: 100%;
+padding: 16px 24px;
+padding-left: 50px;
+font-size: 1.05rem;
+font-family: 'Poppins', sans-serif;
+border: 3px solid var(--text-brown);
+border-radius: 50px;
+background-color: var(--white);
+box-shadow: var(--shadow-hard);
+outline: none;
+transition: var(--transition-fast);
+}
+
+.search-input:focus {
+border-color: var(--accent-pink);
+}
+
+.search-icon {
+position: absolute;
+left: 20px;
+top: 50%;
+transform: translateY(-50%);
+font-size: 1.2rem;
+}
+
+.deals-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 24px;
+margin-bottom: 50px;
+}
+
+.deal-card {
+background-color: var(--secondary-orange);
+color: var(--white);
+border: 3px solid var(--text-brown);
+border-radius: var(--radius-lg);
+padding: 24px;
+box-shadow: var(--shadow-hard);
+position: relative;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+transition: var(--transition-fast);
+}
+
+.deal-card:hover {
+transform: translateY(-5px);
+box-shadow: var(--shadow-hover);
+}
+
+.deal-card-family {
+background-color: var(--accent-pink);
+}
+
+.deal-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 14px;
+border-bottom: 2px dashed rgba(255,255,255,0.4);
+padding-bottom: 10px;
+}
+
+.deal-name {
+font-size: 1.4rem;
+color: var(--white);
+}
+
+.deal-price {
+background-color: var(--primary-yellow);
+color: var(--text-brown);
+font-family: 'Fredoka', cursive, sans-serif;
+font-weight: 700;
+font-size: 1.25rem;
+padding: 4px 12px;
+border-radius: 50px;
+border: 2px solid var(--text-brown);
+}
+
+.deal-items {
+list-style: none;
+margin-bottom: 18px;
+}
+
+.deal-items li {
+font-size: 0.95rem;
+font-weight: 500;
+margin-bottom: 6px;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.deal-btn {
+font-size: 0.95rem;
+padding: 8px 16px;
+width: 100%;
+}
+
+.section-header-category {
+margin-top: 50px;
+}
+
+.categories-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+margin-bottom: 50px;
+}
+
+.category-card {
+background-color: var(--white);
+border: 3px solid var(--text-brown);
+border-radius: var(--radius-md);
+padding: 22px 16px;
+box-shadow: var(--shadow-hard);
+text-align: center;
+cursor: pointer;
+transition: var(--transition-fast);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 10px;
+}
+
+.category-card:hover {
+transform: translateY(-4px);
+background-color: var(--primary-yellow);
+box-shadow: var(--shadow-hover);
+}
+
+.category-card-icon {
+font-size: 2.2rem;
+}
+
+.category-card-title {
+font-family: 'Fredoka', cursive, sans-serif;
+font-size: 1.15rem;
+font-weight: 600;
+color: var(--text-brown);
+}
+
+/* STREAMING_CHUNK:Styling opening hours and location container... */
+.timing-location-section {
+background-color: var(--primary-yellow);
+border: 3px solid var(--text-brown);
+border-radius: var(--radius-lg);
+padding: 40px 30px;
+box-shadow: var(--shadow-hard);
+margin-bottom: 60px;
+text-align: center;
+}
+
+.timing-title {
+font-size: 2.2rem;
+color: #8B4513;
+}
+
+.timing-subtitle {
+font-size: 1.05rem;
+font-weight: 600;
+color: #5C2E0B;
+margin-top: 6px;
+}
+
+.timing-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+max-width: 700px;
+margin: 24px auto 0 auto;
+gap: 24px;
+}
+
+.info-box {
+background-color: var(--white);
+border: 3px solid var(--text-brown);
+border-radius: var(--radius-md);
+padding: 20px;
+box-shadow: 0 4px 0px var(--text-brown);
+}
+
+.info-box-interactive {
+cursor: pointer;
+transition: transform 0.2s;
+}
+
+.info-box-interactive:hover {
+transform: scale(1.03);
+}
+
+.info-icon {
+font-size: 2rem;
+margin-bottom: 6px;
+}
+
+.info-title {
+font-family: 'Fredoka', cursive, sans-serif;
+font-size: 1.2rem;
+margin-bottom: 4px;
+}
+
+.info-detail {
+font-size: 0.95rem;
+font-weight: 600;
+}
+
+.delivery-link {
+color: var(--accent-pink);
+font-weight: 700;
+}
+
+.closed-badge {
+font-size: 0.8rem;
+font-weight: 800;
+color: var(--accent-pink);
+}
+
+.maps-btn-wrapper {
+margin-top: 28px;
+}
+
+.btn-maps {
+font-size: 1.05rem;
+padding: 12px 28px;
+}
+
+/* STREAMING_CHUNK:Styling sticky menu category filters and menu cards grid... */
+.menu-top-banner {
+background-color: var(--primary-yellow);
+border: 3px solid var(--text-brown);
+border-radius: var(--radius-lg);
+padding: 28px 20px;
+margin-bottom: 24px;
+box-shadow: var(--shadow-hard);
+text-align: center;
+}
+
+.banner-title {
+margin-bottom: 6px;
+}
+
+.sticky-filters {
+position: sticky;
+top: 76px;
+z-index: 900;
+background-color: var(--bg-cream);
+padding: 16px 0;
+border-bottom: 2px solid rgba(139, 69, 19, 0.15);
+margin-bottom: 30px;
+}
+
+.filter-buttons {
+display: flex;
+gap: 10px;
+overflow-x: auto;
+padding-bottom: 8px;
+scrollbar-width: thin;
+}
+
+.filter-btn {
+background-color: var(--white);
+color: var(--text-brown);
+border: 2px solid var(--text-brown);
+border-radius: 50px;
+padding: 8px 18px;
+font-family: 'Fredoka', cursive, sans-serif;
+font-size: 1rem;
+font-weight: 600;
+cursor: pointer;
+white-space: nowrap;
+transition: var(--transition-fast);
+box-shadow: 0 3px 0px var(--text-brown);
+}
+
+.filter-btn:hover, .filter-btn.active {
+background-color: var(--secondary-orange);
+color: var(--white);
+transform: translateY(-2px);
+}
+
+.menu-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+gap: 24px;
+margin-bottom: 60px;
+}
+
+.menu-card {
+background-color: var(--white);
+border: 3px solid var(--text-brown);
+border-radius: var(--radius-lg);
+overflow: hidden;
+box-shadow: var(--shadow-hard);
+transition: var(--transition-fast);
+cursor: pointer;
+display: flex;
+flex-direction: column;
+}
+
+.menu-card:hover {
+transform: translateY(-5px);
+box-shadow: var(--shadow-hover);
+}
+
+.menu-card-img-wrapper {
+height: 160px;
+background-color: #FFE066;
+position: relative;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+border-bottom: 3px solid var(--text-brown);
+}
+
+.menu-card-img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.menu-card-category {
+position: absolute;
+top: 10px;
+right: 10px;
+background-color: var(--accent-pink);
+color: var(--white);
+font-size: 0.75rem;
+font-weight: 700;
+padding: 3px 10px;
+border-radius: 50px;
+border: 1.5px solid var(--text-brown);
+}
+
+.menu-card-body {
+padding: 18px;
+display: flex;
+flex-direction: column;
+flex: 1;
+justify-content: space-between;
+}
+
+.menu-card-title {
+font-size: 1.2rem;
+margin-bottom: 6px;
+}
+
+.menu-card-footer {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 14px;
+padding-top: 10px;
+border-top: 1.5px dashed #E0D0B0;
+}
+
+.menu-card-price {
+font-family: 'Fredoka', cursive, sans-serif;
+font-size: 1.25rem;
+font-weight: 700;
+color: var(--accent-pink);
+}
+
+.btn-add {
+background-color: var(--primary-yellow);
+color: var(--text-brown);
+border: 2px solid var(--text-brown);
+border-radius: 50px;
+padding: 6px 14px;
+font-weight: 700;
+font-size: 0.85rem;
+box-shadow: 0 2px 0px var(--text-brown);
+}
+
+/* STREAMING_CHUNK:Styling interactive detail modal dialogs... */
+.modal-overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(42, 24, 11, 0.7);
+z-index: 2000;
+align-items: center;
+justify-content: center;
+padding: 20px;
+backdrop-filter: blur(4px);
+}
+
+.modal-overlay.active {
+display: flex;
+}
+
+.modal-card {
+background-color: var(--bg-cream);
+border: 4px solid var(--text-brown);
+border-radius: var(--radius-lg);
+max-width: 480px;
+width: 100%;
+padding: 28px;
+box-shadow: 0 15px 0px var(--text-brown);
+position: relative;
+animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+from { transform: scale(0.85); opacity: 0; }
+to { transform: scale(1); opacity: 1; }
+}
+
+.modal-close {
+position: absolute;
+top: 14px;
+right: 18px;
+background: var(--white);
+border: 2px solid var(--text-brown);
+width: 36px;
+height: 36px;
+border-radius: 50%;
+font-size: 1.2rem;
+font-weight: 700;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.modal-img-wrapper {
+height: 180px;
+border-radius: var(--radius-md);
+border: 3px solid var(--text-brown);
+overflow: hidden;
+margin-bottom: 16px;
+background-color: var(--primary-yellow);
+}
+
+.modal-img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.modal-category-badge {
+background-color: var(--accent-pink);
+color: white;
+font-size: 0.75rem;
+font-weight: 700;
+padding: 4px 12px;
+border-radius: 50px;
+border: 1px solid var(--text-brown);
+}
+
+.modal-item-title {
+font-size: 1.6rem;
+margin: 10px 0 4px 0;
+}
+
+.modal-item-price {
+font-family: 'Fredoka', cursive, sans-serif;
+font-size: 1.4rem;
+color: var(--accent-pink);
+font-weight: 700;
+margin-bottom: 12px;
+}
+
+.modal-item-desc {
+font-size: 0.95rem;
+color: var(--text-dark);
+margin-bottom: 20px;
+line-height: 1.5;
+}
+
+.modal-actions {
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+}
+
+.modal-btn {
+flex: 1;
+font-size: 0.95rem;
+padding: 10px;
+}
+
+.modal-btn-tiktok {
+background-color: #000;
+}
+
+.modal-btn-whatsapp {
+background-color: #25D366;
+}
+
+.text-center {
+text-align: center;
+}
+
+.success-emoji {
+font-size: 3rem;
+margin-bottom: 10px;
+}
+
+.success-title {
+font-size: 1.6rem;
+margin-bottom: 8px;
+}
+
+.success-desc {
+font-size: 0.95rem;
+color: var(--text-dark);
+margin-bottom: 20px;
+}
+
+.w-full {
+width: 100%;
+}
+
+/* STREAMING_CHUNK:Styling contact section, form inputs, and TikTok cards... */
+.contact-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 30px;
+margin-bottom: 50px;
+}
+
+.tiktok-box {
+background-color: #000000;
+color: var(--white);
+border: 3px solid var(--text-brown);
+border-radius: var(--radius-lg);
+padding: 30px;
+box-shadow: var(--shadow-hard);
+text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 16px;
+}
+
+.tiktok-header-emoji {
+font-size: 2.5rem;
+}
+
+.tiktok-header-title {
+font-family: 'Fredoka', cursive, sans-serif;
+font-size: 1.4rem;
+color: var(--primary-yellow);
+}
+
+.tiktok-header-sub {
+font-size: 0.9rem;
+opacity: 0.9;
+}
+
+.tiktok-embed-wrapper {
+width: 100%;
+max-width: 325px;
+margin: 10px auto;
+overflow: hidden;
+border-radius: 12px;
+background-color: #000;
+}
+
+.contact-form-wrapper {
+background-color: var(--white);
+border: 3px solid var(--text-brown);
+border-radius: var(--radius-lg);
+padding: 30px;
+box-shadow: var(--shadow-hard);
+}
+
+.form-heading {
+font-size: 1.5rem;
+margin-bottom: 16px;
+color: var(--text-brown);
+}
+
+.form-group {
+margin-bottom: 18px;
+text-align: left;
+}
+
+.form-label {
+display: block;
+font-weight: 600;
+margin-bottom: 6px;
+font-size: 0.95rem;
+}
+
+.form-input, .form-textarea {
+width: 100%;
+padding: 12px 16px;
+border: 2px solid var(--text-brown);
+border-radius: var(--radius-sm);
+font-family: 'Poppins', sans-serif;
+font-size: 0.95rem;
+outline: none;
+}
+
+.btn-submit {
+width: 100%;
+font-size: 1.1rem;
+padding: 12px;
+}
+
+.social-section {
+margin-top: 40px;
+margin-bottom: 50px;
+text-align: center;
+}
+
+.section-header-social {
+margin-bottom: 24px;
+}
+
+.tiktok-accounts-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 24px;
+max-width: 700px;
+margin: 0 auto;
+}
+
+.tiktok-account-card {
+background-color: #000000;
+color: var(--white);
+border: 3px solid var(--text-brown);
+border-radius: var(--radius-lg);
+padding: 24px;
+box-shadow: var(--shadow-hard);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 12px;
+text-decoration: none;
+transition: var(--transition-fast);
+}
+
+.tiktok-account-card:hover {
+transform: translateY(-5px);
+box-shadow: var(--shadow-hover);
+border-color: var(--accent-pink);
+}
+
+.tiktok-icon-badge {
+width: 64px;
+height: 64px;
+background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #ff0844 100%);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #ffffff;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tiktok-account-name {
+font-family: 'Fredoka', cursive, sans-serif;
+font-size: 1.25rem;
+color: var(--primary-yellow);
+}
+
+.tiktok-account-handle {
+font-size: 0.95rem;
+font-weight: 600;
+color: var(--white);
+opacity: 0.85;
+background: rgba(255, 255, 255, 0.15);
+padding: 4px 12px;
+border-radius: 50px;
+}
+
+.section-header-map {
+margin-bottom: 20px;
+}
+
+.map-embed-wrapper {
+border: 3px solid var(--text-brown);
+border-radius: var(--radius-lg);
+overflow: hidden;
+box-shadow: var(--shadow-hard);
+margin-bottom: 60px;
+}
+
+/* STREAMING_CHUNK:Styling story section, floating action button and footer layout... */
+.story-container {
+padding: 60px 20px;
+}
+
+.story-box {
+max-width: 650px;
+margin: 0 auto;
+text-align: center;
+background-color: var(--white);
+border: 3px solid var(--text-brown);
+border-radius: var(--radius-lg);
+padding: 50px 30px;
+box-shadow: var(--shadow-hard);
+}
+
+.story-emoji {
+font-size: 3.5rem;
+margin-bottom: 16px;
+}
+
+.story-title {
+margin-bottom: 16px;
+}
+
+.story-text {
+font-size: 1.3rem;
+font-weight: 600;
+color: var(--text-brown);
+line-height: 1.6;
+}
+
+.story-badge-wrapper {
+margin-top: 30px;
+}
+
+.story-badge {
+background-color: var(--primary-yellow);
+color: var(--text-brown);
+padding: 8px 20px;
+border-radius: 50px;
+border: 2px solid var(--text-brown);
+font-weight: 700;
+font-size: 0.95rem;
+}
+
+.floating-order-btn {
+position: fixed;
+bottom: 24px;
+right: 24px;
+z-index: 1500;
+background: linear-gradient(135deg, #FF1493 0%, #FFA500 100%);
+color: var(--white);
+border: 3px solid var(--text-brown);
+border-radius: 50px;
+padding: 12px 22px;
+font-family: 'Fredoka', cursive, sans-serif;
+font-size: 1.1rem;
+font-weight: 600;
+box-shadow: var(--shadow-hard);
+display: flex;
+align-items: center;
+gap: 10px;
+cursor: pointer;
+animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+0% { transform: scale(1); }
+50% { transform: scale(1.05); }
+100% { transform: scale(1); }
+}
+
+footer {
+background-color: var(--primary-yellow);
+border-top: 4px solid var(--text-brown);
+padding: 40px 20px 20px 20px;
+margin-top: auto;
+}
+
+.footer-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 30px;
+margin-bottom: 30px;
+}
+
+.footer-title-lg {
+font-size: 1.3rem;
+margin-bottom: 10px;
+}
+
+.footer-title-md {
+font-size: 1.1rem;
+margin-bottom: 10px;
+}
+
+.footer-text {
+font-size: 0.9rem;
+margin-bottom: 4px;
+}
+
+.footer-text-interactive {
+cursor: pointer;
+}
+
+.footer-link {
+font-size: 0.9rem;
+cursor: pointer;
+margin-bottom: 4px;
+}
+
+.footer-closed {
+font-size: 0.9rem;
+font-weight: 700;
+color: var(--accent-pink);
+}
+
+.footer-bottom {
+text-align: center;
+padding-top: 20px;
+border-top: 2px dashed var(--text-brown);
+font-size: 0.85rem;
+font-weight: 600;
+}
+
+/* STREAMING_CHUNK:Applying mobile responsive media queries... */
+@media (max-width: 768px) {
+.hero-title {
+font-size: 2.5rem;
+}
+nav ul {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%;
+background-color: var(--primary-yellow);
+border-bottom: 4px solid var(--text-brown);
+flex-direction: column;
+padding: 20px;
+gap: 16px;
+box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+nav ul.mobile-open {
+display: flex;
+}
+.burger-btn {
+display: block;
+}
+.timing-grid {
+grid-template-columns: 1fr;
+}
+.categories-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media (max-width: 480px) {
+.categories-grid {
+grid-template-columns: 1fr;
+}
+.hero-title {
+font-size: 2.1rem;
+}
+}

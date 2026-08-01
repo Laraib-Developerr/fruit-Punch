@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Punch - Fresh Fast Food & Drinks in Kharian</title>
+    <!-- Google Fonts: Fredoka (rounded titles) & Poppins (readable body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Main External CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo-group" onclick="switchTab('home')">
+                <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Glass Background / Circle Outer Shield -->
+                    <circle cx="50" cy="50" r="46" fill="#FFD700" stroke="#8B4513" stroke-width="5"/>
+                    <!-- Juice Glass Cup -->
+                    <path d="M30 38 L36 80 Q37 84 50 84 Q63 84 64 80 L70 38 Z" fill="#FF1493" stroke="#8B4513" stroke-width="4" stroke-linejoin="round"/>
+                    <!-- Juice Level Fill -->
+                    <path d="M32 46 L35 76 Q36 80 50 80 Q64 80 65 76 L68 46 Z" fill="#FFA500"/>
+                    <!-- Ice Cubes -->
+                    <rect x="42" y="52" width="10" height="10" rx="2" fill="#FFFFFF" opacity="0.8" transform="rotate(12 47 57)" stroke="#8B4513" stroke-width="1.5"/>
+                    <rect x="52" y="60" width="9" height="9" rx="2" fill="#FFFFFF" opacity="0.8" transform="rotate(-15 56 64)" stroke="#8B4513" stroke-width="1.5"/>
+                    <!-- Drinking Straw -->
+                    <path d="M55 42 L68 14 L75 17 L61 42 Z" fill="#00F2FE" stroke="#8B4513" stroke-width="3" stroke-linejoin="round"/>
+                    <!-- Lemon/Lime Slice on Rim -->
+                    <circle cx="33" cy="38" r="11" fill="#FFD700" stroke="#8B4513" stroke-width="3"/>
+                    <circle cx="33" cy="38" r="8" fill="#FFF3B0"/>
+                    <!-- Glass Rim Highlight -->
+                    <ellipse cx="50" cy="38" rx="20" ry="4" fill="#FFFFFF" opacity="0.6"/>
+                </svg>
+                <div>
+                    <div class="brand-title">Fruit Punch</div>
+                    <div class="brand-subtitle">Kharian Stall</div>
+                </div>
+            </div>
+
+            <nav>
+                <ul id="navMenu">
+                    <li><span class="nav-link active" onclick="switchTab('home')">Home</span></li>
+                    <li><span class="nav-link" onclick="switchTab('menu')">Menu</span></li>
+                    <li><span class="nav-link" onclick="switchTab('story')">Our Journey</span></li>
+                    <li><span class="nav-link" onclick="switchTab('contact')">Talk To Us</span></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-quick-location" onclick="scrollToLocation()">
+                    <span>⏰📍</span> <span class="hours-text">Hours</span>
+                </button>
+                <button class="burger-btn" onclick="toggleBurger()">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home-view" class="page-view active">
+            <div class="hero-section">
+                <span class="hero-decor hero-decor-1">🍹</span>
+                <span class="hero-decor hero-decor-2">🧃</span>
+                <span class="hero-decor hero-decor-3">🍟</span>
+                <span class="hero-decor hero-decor-4">🍜</span>
+                <span class="hero-badge">🍹 Kharian's Favorite Food & Juice Corner</span>
+                <h1 class="hero-title">FRUIT PUNCH</h1>
+                <p class="hero-tagline">Freshly made Ice Shakes, Chips Chaat, Instant Ramen Noodles, loaded snacks and unbeatable combo deals served daily!</p>
+                <button class="btn-primary" onclick="switchTab('menu')">
+                    📋 VIEW FULL MENU
+                </button>
+            </div>
+
+            <div class="container container-top-padding">
+               
+                <div class="section-header">
+                    <h2 class="section-title">🔥 Money-Saving Deals</h2>
+                    <p class="section-subtitle">Specially curated value combos prepared fresh for every order!</p>
+                </div>
+
+                <div class="deals-grid">
+                    <!-- Deal 1 -->
+                    <div class="deal-card">
+                        <div>
+                            <div class="deal-header">
+                                <h3 class="deal-name">DEAL 1</h3>
+                                <span class="deal-price">Rs. 350</span>
+                            </div>
+                            <ul class="deal-items">
+                                <li>🥗 1 Chicken Tikka Salad</li>
+                                <li>💧 1 Detox Water</li>
+                                <li>🍞 1 Cheese Toast</li>
+                            </ul>
+                        </div>
+                        <button class="btn-primary deal-btn" onclick="openDealModal('DEAL 1', 'Rs. 350', '1 Chicken Tikka Salad, 1 Detox Water, 1 Cheese Toast')">Order Deal 1</button>
+                    </div>
+
+                    <!-- Deal 2 -->
+                    <div class="deal-card">
+                        <div>
+                            <div class="deal-header">
+                                <h3 class="deal-name">DEAL 2</h3>
+                                <span class="deal-price">Rs. 500</span>
+                            </div>
+                            <ul class="deal-items">
+                                <li>🥤 1 Ice Shake</li>
+                                <li>🍟 1 Mini Lays Chaat</li>
+                                <li>🍜 1 Mini Instant Noodles</li>
+                            </ul>
+                        </div>
+                        <button class="btn-primary deal-btn" onclick="openDealModal('DEAL 2', 'Rs. 500', '1 Ice Shake, 1 Mini Lays Chaat, 1 Mini Instant Noodles')">Order Deal 2</button>
+                    </div>
+
+                    <!-- Deal 3 -->
+                    <div class="deal-card">
+                        <div>
+                            <div class="deal-header">
+                                <h3 class="deal-name">DEAL 3</h3>
+                                <span class="deal-price">Rs. 800</span>
+                            </div>
+                            <ul class="deal-items">
+                                <li>🥤 1 Ice Shake</li>
+                                <li>🍟 1 Lays Chaat</li>
+                                <li>🍜 1 Instant Noodles</li>
+                            </ul>
+                        </div>
+                        <button class="btn-primary deal-btn" onclick="openDealModal('DEAL 3', 'Rs. 800', '1 Ice Shake, 1 Lays Chaat, 1 Instant Noodles')">Order Deal 3</button>
+                    </div>
+
+                    <!-- Deal 4 -->
+                    <div class="deal-card">
+                        <div>
+                            <div class="deal-header">
+                                <h3 class="deal-name">DEAL 4</h3>
+                                <span class="deal-price">Rs. 1000</span>
+                            </div>
+                            <ul class="deal-items">
+                                <li>🥟 1 Chicken Momos</li>
+                                <li>🍬 1 Lavashak (500)</li>
+                                <li>🍟 1 Lays Chaat</li>
+                            </ul>
+                        </div>
+                        <button class="btn-primary deal-btn" onclick="openDealModal('DEAL 4', 'Rs. 1000', '1 Chicken Momos, 1 Lavashak 500, 1 Lays Chaat')">Order Deal 4</button>
+                    </div>
+
+                    <!-- Deal 5 -->
+                    <div class="deal-card">
+                        <div>
+                            <div class="deal-header">
+                                <h3 class="deal-name">DEAL 5</h3>
+                                <span class="deal-price">Rs. 1500</span>
+                            </div>
+                            <ul class="deal-items">
+                                <li>🥤 2 Ice Shakes</li>
+                                <li>🥟 1 Chicken Momos</li>
+                                <li>🍟 1 Loaded Fries</li>
+                                <li>🍟 1 Lays Chaat</li>
+                            </ul>
+                        </div>
+                        <button class="btn-primary deal-btn" onclick="openDealModal('DEAL 5', 'Rs. 1500', '2 Ice Shakes, 1 Chicken Momos, 1 Loaded Fries, 1 Lays Chaat')">Order Deal 5</button>
+                    </div>
+
+                    <!-- Family Deal -->
+                    <div class="deal-card deal-card-family">
+                        <div>
+                            <div class="deal-header">
+                                <h3 class="deal-name">FAMILY DEAL</h3>
+                                <span class="deal-price">Rs. 2000</span>
+                            </div>
+                            <ul class="deal-items">
+                                <li>🥤 2 Ice Shakes</li>
+                                <li>🍹 1 Mojito</li>
+                                <li>🥟 1 Chicken Momos</li>
+                                <li>🍟 2 Lays Chaat</li>
+                                <li>🥗 1 Chicken Tikka Salad</li>
+                                <li>🍟 1 Loaded Fries</li>
+                            </ul>
+                        </div>
+                        <button class="btn-primary deal-btn" onclick="openDealModal('FAMILY DEAL', 'Rs. 2000', '2 Ice Shakes, 1 Mojito, 1 Chicken Momos, 2 Lays Chaat, 1 Chicken Tikka Salad, 1 Loaded Fries')">Order Family Deal</button>
+                    </div>
+                </div>
+
+                <div class="section-header section-header-category">
+                    <h2 class="section-title">✨ Explore Our Categories</h2>
+                    <p class="section-subtitle">Click a category to instantly browse items on our full menu!</p>
+                </div>
+
+                <div class="categories-grid">
+                    <div class="category-card" onclick="selectCategoryFromHome('all')">
+                        <span class="category-card-icon">🌟</span>
+                        <span class="category-card-title">All Items</span>
+                    </div>
+                    <div class="category-card" onclick="selectCategoryFromHome('deals')">
+                        <span class="category-card-icon">🏷️</span>
+                        <span class="category-card-title">Value Deals</span>
+                    </div>
+                    <div class="category-card" onclick="selectCategoryFromHome('chaat')">
+                        <span class="category-card-icon">🍟</span>
+                        <span class="category-card-title">Chips Chaat</span>
+                    </div>
+                    <div class="category-card" onclick="selectCategoryFromHome('ramen')">
+                        <span class="category-card-icon">🍜</span>
+                        <span class="category-card-title">Ramen / Noodles</span>
+                    </div>
+                    <div class="category-card" onclick="selectCategoryFromHome('shakes')">
+                        <span class="category-card-icon">🥤</span>
+                        <span class="category-card-title">Ice Shakes</span>
+                    </div>
+                    <div class="category-card" onclick="selectCategoryFromHome('drinks')">
+                        <span class="category-card-icon">🍹</span>
+                        <span class="category-card-title">Drinks & Coffee</span>
+                    </div>
+                    <div class="category-card" onclick="selectCategoryFromHome('others')">
+                        <span class="category-card-icon">🍕</span>
+                        <span class="category-card-title">Snacks & Specials</span>
+                    </div>
+                </div>
+
+                <div class="timing-location-section" id="timing-location">
+                    <h2 class="timing-title">📍 Visit Us or Order Online!</h2>
+                    <p class="timing-subtitle">Freshly prepared fast food and chilled beverages served daily in Kharian.</p>
+
+                    <div class="timing-grid">
+                        <div class="info-box">
+                            <div class="info-icon">⏰</div>
+                            <div class="info-title">Opening Hours</div>
+                            <div class="info-detail">6:00 PM – 11:00 PM Daily</div>
+                            <span class="closed-badge">FRIDAY CLOSED</span>
+                        </div>
+
+                        <div class="info-box info-box-interactive" onclick="switchTab('contact')">
+                            <div class="info-icon">🛵</div>
+                            <div class="info-title">Home Delivery</div>
+                            <div class="info-detail delivery-link">Click to order via Contact / Talk To Us →</div>
+                        </div>
+                    </div>
+
+                    <div class="maps-btn-wrapper">
+                        <a href="https://maps.google.com/?q=GT+Road+Kharian+Near+Doctor+Hospital" target="_blank" class="btn-primary btn-maps">
+                            🗺️ View on Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu-view" class="page-view container page-view-padded">
+            <div class="menu-top-banner">
+                <h2 class="section-title banner-title">📜 Full Menu & Ordering</h2>
+                <p class="section-subtitle">Select any category or tap any card to place your order via TikTok or WhatsApp!</p>
+            </div>
+
+            <!-- Sticky Category Filter -->
+            <div class="sticky-filters">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterMenu('all', this)">🌟 All Items</button>
+                    <button class="filter-btn" onclick="filterMenu('chaat', this)">🍟 Chips Chaat</button>
+                    <button class="filter-btn" onclick="filterMenu('ramen', this)">🍜 Ramen / Noodles</button>
+                    <button class="filter-btn" onclick="filterMenu('shakes', this)">🥤 Ice Shakes</button>
+                    <button class="filter-btn" onclick="filterMenu('drinks', this)">🍹 Drinks & Coffee</button>
+                    <button class="filter-btn" onclick="filterMenu('others', this)">🍕 Snacks & Specials</button>
+                    <button class="filter-btn" onclick="filterMenu('deals', this)">🏷️ Value Deals</button>
+                </div>
+            </div>
+
+            <!-- Menu Search Bar -->
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="menuSearchInput" class="search-input" placeholder="Search menu items..." oninput="filterBySearchText(this.value)">
+            </div>
+
+            <!-- Menu Cards Grid -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- Dynamically populated via JavaScript -->
+            </div>
+        </section>
+
+        <section id="story-view" class="page-view container story-container">
+            <div class="story-box">
+                <div class="story-emoji">🛺 ➔ 🏠</div>
+                <h2 class="section-title story-title">Our Journey</h2>
+                <p class="story-text">
+                    "Our journey from a cart to a cabin is coming soon. Stay tuned!"
+                </p>
+                <div class="story-badge-wrapper">
+                    <span class="story-badge">
+                        ✨ Fruit Punch Kharian
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-view" class="page-view container page-view-padded">
+            <div class="section-header">
+                <h2 class="section-title">📱 Talk To Us & Order</h2>
+                <p class="section-subtitle">Connect directly with Fruit Punch Kharian!</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="tiktok-box">
+                    <div class="tiktok-header-emoji">🎵</div>
+                    <h3 class="tiktok-header-title">Latest TikTok Video</h3>
+                    <p class="tiktok-header-sub">Watch our latest videos automatically updated from @fruit.punch.offical!</p>
+                    
+                    <div class="tiktok-embed-wrapper">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@fruit.punch.offical" data-unique-id="fruit.punch.offical" data-embed-type="creator">
+                            <section>
+                                <a target="_blank" href="https://www.tiktok.com/@fruit.punch.offical?refer=embed">@fruit.punch.offical</a>
+                            </section>
+                        </blockquote>
+                        <script async src="https://www.tiktok.com/embed.js"></script>
+                    </div>
+                </div>
+
+                <!-- Contact / Order Inquiry Form -->
+                <div class="contact-form-wrapper">
+                    <h3 class="form-heading">Send Us A Message</h3>
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label class="form-label" for="formName">Your Full Name</label>
+                            <input type="text" id="formName" name="name" class="form-input" placeholder="e.g. Ali Ahmed" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="formPhone">Phone / WhatsApp Number</label>
+                            <input type="tel" id="formPhone" name="phone" class="form-input" placeholder="03xx-xxxxxxx" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="formMessage">Your Order or Inquiry</label>
+                            <textarea id="formMessage" name="message" class="form-textarea" rows="4" placeholder="Mention items you'd like to order or ask any question..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary btn-submit">
+                            ✉️ Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Dedicated TikTok Accounts Section -->
+            <div class="social-section">
+                <div class="section-header section-header-social">
+                    <h3 class="section-title">🎵 Our TikTok Accounts</h3>
+                    <p class="section-subtitle">Follow both of our official TikTok channels for daily updates & tasty reels!</p>
+                </div>
+                
+                <div class="tiktok-accounts-grid">
+                    <a href="https://www.tiktok.com/@fruit.punch.offical" target="_blank" class="tiktok-account-card">
+                        <div class="tiktok-icon-badge">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001a2.895 2.895 0 0 1 3.182-4.51v-3.5a6.329 6.329 0 0 0-5.394 2.484 6.341 6.341 0 0 0 .805 8.167 6.34 6.34 0 0 0 8.012.338 6.322 6.322 0 0 0 2.083-4.293V8.895a8.212 8.212 0 0 0 4.73 1.48V6.93a4.78 4.78 0 0 1-1.002-.244z"/>
+                            </svg>
+                        </div>
+                        <div class="tiktok-account-name">Fruit Punch Official TikTok</div>
+                        <div class="tiktok-account-handle">@fruit.punch.offical</div>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@fruitpunch222" target="_blank" class="tiktok-account-card">
+                        <div class="tiktok-icon-badge">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001a2.895 2.895 0 0 1 3.182-4.51v-3.5a6.329 6.329 0 0 0-5.394 2.484 6.341 6.341 0 0 0 .805 8.167 6.34 6.34 0 0 0 8.012.338 6.322 6.322 0 0 0 2.083-4.293V8.895a8.212 8.212 0 0 0 4.73 1.48V6.93a4.78 4.78 0 0 1-1.002-.244z"/>
+                            </svg>
+                        </div>
+                        <div class="tiktok-account-name">Fruit Punch 2 TikTok</div>
+                        <div class="tiktok-account-handle">@fruitpunch222</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Google Map Location Embed -->
+            <div class="section-header section-header-map">
+                <h3 class="section-title">📍 Location Map</h3>
+            </div>
+            <div class="map-embed-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.123!2d73.8821!3d32.8123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDQ4JNDQuMyJOIDczwrA1Mic1NS42IkU!5e0!3m2!1sen!2spk!4v1600000000000!5m2!1sen!2spk" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Item Details & Order Modal -->
+    <div id="itemModal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-img-wrapper">
+                <img id="modalImg" src="" alt="Menu item" class="modal-img">
+            </div>
+            <span id="modalCategory" class="modal-category-badge"></span>
+            <h3 id="modalTitle" class="modal-item-title"></h3>
+            <div id="modalPrice" class="modal-item-price"></div>
+            <p id="modalDesc" class="modal-item-desc"></p>
+            <div class="modal-actions">
+                <a id="modalTiktokBtn" href="https://www.tiktok.com/@fruit.punch.offical" target="_blank" class="btn-primary modal-btn modal-btn-tiktok">
+                    💬 DM on TikTok
+                </a>
+                <a id="modalWhatsappBtn" href="https://wa.me/923000000000" target="_blank" class="btn-primary modal-btn modal-btn-whatsapp">
+                    💬 Order WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Submitted Modal -->
+    <div id="successModal" class="modal-overlay">
+        <div class="modal-card text-center">
+            <button class="modal-close" onclick="closeSuccessModal()">✕</button>
+            <div class="success-emoji">🎉</div>
+            <h3 class="success-title">Message Received!</h3>
+            <p class="success-desc">Thank you for contacting Fruit Punch. We will get back to you shortly on WhatsApp!</p>
+            <button class="btn-primary w-full" onclick="closeSuccessModal()">Got It!</button>
+        </div>
+    </div>
+
+    <!-- Floating TikTok Order DM Button -->
+    <a href="https://www.tiktok.com/@fruit.punch.offical" target="_blank" class="floating-order-btn">
+        <span>🎵</span> DM to Order
+    </a>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4 class="footer-title-lg">Fruit Punch Kharian</h4>
+                    <p class="footer-text">Fresh fast food stall, chilled shakes & hot noodles served daily in Kharian.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title-md">Quick Links</h4>
+                    <p class="footer-link" onclick="switchTab('home')">➡️ Home</p>
+                    <p class="footer-link" onclick="switchTab('menu')">➡️ Full Menu</p>
+                    <p class="footer-link" onclick="switchTab('story')">➡️ Our Journey</p>
+                    <p class="footer-link" onclick="switchTab('contact')">➡️ Talk To Us</p>
+                </div>
+                <div>
+                    <h4 class="footer-title-md">Location & Hours</h4>
+                    <p class="footer-text footer-text-interactive" onclick="window.open('https://maps.google.com/?q=GT+Road+Kharian+Near+Doctor+Hospital', '_blank')">📍 GT Road Kharian Near Doctor Hospital, Old CNG</p>
+                    <p class="footer-text">⏰ 6:00 PM – 11:00 PM Daily</p>
+                    <p class="footer-closed">FRIDAY CLOSED</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Fruit Punch Kharian. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main External JavaScript Logic File -->
+    <script src="js/script.js"></script>
+</body>
+</html>
